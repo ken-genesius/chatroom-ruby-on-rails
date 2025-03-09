@@ -23,6 +23,9 @@
   </head>
 
   <body>
+    <% if(notice || alert) %>
+      <%= render "layouts/alerts" %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
