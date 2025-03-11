@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_10_234940) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_11_041258) do
+  create_table "chatroommembers", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "chatroom_id", null: false
+    t.string "role", default: "member"
+    t.datetime "joined_at", default: -> { "CURRENT_TIMESTAMP" }
+    t.datetime "left_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chatroom_id"], name: "index_chatroommembers_on_chatroom_id"
+    t.index ["user_id"], name: "index_chatroommembers_on_user_id"
+  end
+
   create_table "chatrooms", force: :cascade do |t|
     t.string "name"
     t.boolean "is_private"
@@ -43,6 +55,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_10_234940) do
     t.index ["user_name"], name: "index_users_on_user_name", unique: true
   end
 
+  add_foreign_key "chatroommembers", "chatrooms"
+  add_foreign_key "chatroommembers", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
 end

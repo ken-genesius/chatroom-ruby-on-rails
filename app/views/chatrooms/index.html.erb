@@ -7,7 +7,7 @@
             <%= render @users %>
         </div>
         <h4> Chatrooms </h4>
-        <%= render 'new_chatroom_form' %>
+        <%= render 'chatrooms/new_chatroom_form' %>
         <%= turbo_stream_from "chatrooms" %>
         <div id="chatrooms">
             <%= render @chatrooms %>
