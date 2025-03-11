@@ -15,4 +15,8 @@ class Chatroom < ApplicationRecord
     end
     single_room
   end
+
+  def member?(chatroom, user)
+    chatroom.chatroommembers.where(user: user).exists?
+  end
 end
