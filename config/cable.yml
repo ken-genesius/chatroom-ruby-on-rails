@@ -10,7 +10,7 @@ test:
 
 production:
   adapter: redis
-  url: redis://red-cv8tpd23esus73fh8ffg:6379
+  url: <%= ENV.fetch("REDIS_URL", 'redis://127.0.0.1:6379/1') %>
   # adapter: solid_cable
   # connects_to:
   #   database:
