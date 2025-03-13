@@ -85,10 +85,23 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  database: <%= Rails.application.credentials.DB_NAME.prod_db %>
-  username: <%= Rails.application.credentials.DB_USERNAME.prod_db %>
-  password: <%= Rails.application.credentials.DB_PASSWORD.prod_db %>
+  primary: &primary_production
+    <<: *default
+    database: chatroom_ruby_on_rails_production
+    username: chatroom_ruby_on_rails
+    password: <%= ENV["CHATROOM_RUBY_ON_RAILS_DATABASE_PASSWORD"] %>
+  cache:
+    <<: *primary_production
+    database: chatroom_ruby_on_rails_production_cache
+    migrations_paths: db/cache_migrate
+  queue:
+    <<: *primary_production
+    database: chatroom_ruby_on_rails_production_queue
+    migrations_paths: db/queue_migrate
+
+#  database: <%= Rails.application.credentials.DB_NAME.prod_db %>
+#  username: <%= Rails.application.credentials.DB_USERNAME.prod_db %>
+#  password: <%= Rails.application.credentials.DB_PASSWORD.prod_db %>
 
 
 # production:
