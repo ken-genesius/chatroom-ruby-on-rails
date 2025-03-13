@@ -3,9 +3,12 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  host = "meowchat-t8ka.onrender.com"
+  protocol = config.force_ssl ? "https" : "http"
+
   config.action_controller.default_url_options = {
-    host: "localhost",
-    port: 3000
+    host: host,
+    protocol: protocol
   }
 
   # Code is not reloaded between requests.
