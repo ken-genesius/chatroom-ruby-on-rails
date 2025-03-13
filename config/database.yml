@@ -84,7 +84,7 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-production:
+  primary: &primary_production
   <<: *default
   database: <%= Rails.application.credentials.DB_NAME.prod_db %>
   username: <%= Rails.application.credentials.DB_USERNAME.prod_db %>
