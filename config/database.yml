@@ -89,6 +89,14 @@ production:
   database: <%= Rails.application.credentials.DB_NAME.prod_db %>
   username: <%= Rails.application.credentials.DB_USERNAME.prod_db %>
   password: <%= Rails.application.credentials.DB_PASSWORD.prod_db %>
+  cache:
+    <<: *primary_production
+    database: <%= Rails.application.credentials.DB_NAME.prod_db+"_cache" %>
+    migrations_paths: db/cache_migrate
+  queue:
+    <<: *primary_production
+    database: <%= Rails.application.credentials.DB_NAME.prod_db+"_queue" %>
+    migrations_paths: db/queue_migrate
 
   # primary: &primary_production
   #   <<: *default
