@@ -14,7 +14,11 @@ module ChatroomRubyOnRails
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
-    config.autoload_lib(ignore: %w[assets tasks])
+    config.eager_load_paths << Rails.root.join("lib")
+
+    config.autoload_paths += Dir[File.join(Rails.root, "lib", "core_ext", "*.rb")].each { |l| require l }
+    config.exceptions_app = self.routes
+    config.middleware.insert_before ActionDispatch::Static, Rack::Deflater
 
     # Configuration for the application, engines, and railties goes here.
     #
