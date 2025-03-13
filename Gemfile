@@ -44,7 +44,7 @@ gem "mini_magick"
 gem "devise", "~> 4.9", ">= 4.9.4"
 gem "stringio", "~> 3.1", ">= 3.1.5"
 
-gem "google-cloud-storage", "~> 1.55"
+gem "aws-sdk-s3"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
