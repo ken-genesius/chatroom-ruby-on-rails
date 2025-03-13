@@ -79,8 +79,15 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  database: meowchat
+  primary: &primary_production
+    <<: *default
+    database: meowchat
+  cache:
+    <<: *primary_production
+    migrations_paths: db/cache_migrate
+  queue:
+    <<: *primary_production
+    migrations_paths: db/queue_migrate
 
 # production:
 #   primary: &primary_production
