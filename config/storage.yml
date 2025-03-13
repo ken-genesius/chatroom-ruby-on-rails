@@ -18,7 +18,18 @@ local:
 google:
   service: GCS
   project: meowchat_rails
-  credentials: <%= Rails.root.join("gcs.keyfile") %>
+  credentials:
+    type: service_account,
+    project_id: meowchat-rails,
+    private_key_id: 63968a273af4ea78d82321991d1a1a0fc66c998b,
+    private_key: -----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQChWWw37J9zH/mY\nQs+Jgqry3prl1ff3qxjCaUJbS12G43Z8uRxifItNumMZIZhy4NRJp/Exch8B8NbT\naoFjr7b7ULq3fhUR3vBBHrhCuGvW2dMgUUe/3L9loo2yyNjeiAYJhO3RlINQDm4p\ncAJZLwHIJZFayLZDEXTBkjkTuKQv6WRW/fweJVipp5ih0i1/NXEzMsiomfVpkHfv\nPf6WvqPSqVxJfdqbW+1xnuvD40dzlLRMC6GjBHl+/bLT6IH1JdVXjfTxADh65Wdf\nu1/85AzAdReRYJtJyt31qgt34/FPgOfrlEAGoSP3WzCu28Y0L6PnJSn4UjYN2r0Q\ns/5eszFNAgMBAAECggEABGgChFF2NkjmglG6xLTYkcrh/IpYG/+kbLS+rusTOgqO\nsw/EFm1zyXLgX3CTLvn0WjGXrOPCtIUc/MeREoWbL+hPvRCYpzUJJyIdYpcSPNsU\ngLKvjK4M3QvwJjSFdahNz+c9LmbJoj9Oo1uPeNuHhy19d3b5QUIiB+JEJEV72GIS\ncx6SKUsqEwsl4mpO9oS0maExc9tT8a2nTa2ruVIBAVNAXd0fTDZgEds+vrOUnSgN\ncPSG29aW8hlVy7B3d5oJN6E6SxSruVv5JNo0N5569Wn/Gc0RZLMzc7xEMBf4Ovvr\nuhpjm+zPFI+loiPOv8w0U8HyL+fpGqGWwnkOHkPbIQKBgQDTluOyeuA75O7zYA3z\nKi0LbLRMGgVrekZyfTnvUnREhmbXyEVnLZoisKeIbihx4t8hj1X/pOYScMTG0gvz\nwD3REfY2XQcjVUtDTMcmPTgQHuPsti3CWvqZdR0KnP6h65kwEurInBDbw+bP7Xb6\nNNq0KjthjpFX0Q7BpxTr8EHMLQKBgQDDNwjnf4klLYkPc9+QtyHFBpF/qS5CoUjO\n3XnUH1GVtkjtQ0BdyEZGcomFdO/R63E5Me7EThVsEhR2bXWL8a24Jw/xKz1NpGA/\nD7i/g2zTM4rfJbJWOwC8O6W5Uip1Mb/H3O+9Gguvq8ByF+dVcM1kLN80v7RZ2dv7\nZ1v5iHGNoQKBgH5Ev6FVXtefaVHn8qs4ciUtO/NmW/GlyMCuJpLBfA0gv+Lp6zEF\nr8Qf8/qg8pX0NABND58+AubiUSvtUaCnCrznoS0UGxxk3ENPYFFbm0dTh+VNWsVv\nkblegHRC+FocxRBBWcdaC1167RUMu0HZpOJ7iXBQqj/jzJCYaw3aFQoJAoGBAIg5\njnAlcmnMNdnfrUIKWXlpFP117L84V1tr+AkLdd44XvmatX78M/YTFV5Y9MWTO+aC\nrrC0IITStQ7TYXSvyN85+wj7eIMG0tcOvIiASN+1FxKS9rjv4Zp5MTN6YAB6H+9z\ngKSAWWlUPC4h+h+IYPunyHbB1DPjMHxmaytdiIghAoGBAKWFGse7R0e6w/Nd27j9\ngxyKQ6TWi8ZwhoEY0e1Hdk2QEbtv0E9Lw/gkGSC5QXj+zOpWs9feo+frz+gImYT1\nd42UjyC5sA+M0Ld7K8T4clhMH8gbFPA5HgsnF0N4wc8W0B+8Qb/9UcMkWFnU2+0j\nDKgakvCkp9q1rsuZT7MVnnOz\n-----END PRIVATE KEY-----\n,
+    client_email: meowchat@meowchat-rails.iam.gserviceaccount.com,
+    client_id: 102143671489704788426,
+    auth_uri: https://accounts.google.com/o/oauth2/auth,
+    token_uri: https://oauth2.googleapis.com/token,
+    auth_provider_x509_cert_url: https://www.googleapis.com/oauth2/v1/certs,
+    client_x509_cert_url: https://www.googleapis.com/robot/v1/metadata/x509/meowchat%40meowchat-rails.iam.gserviceaccount.com,
+    universe_domain: googleapis.com
   bucket: meowchat-rails
 
 # Use bin/rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
